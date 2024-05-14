@@ -25,7 +25,7 @@ function LogIngestForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-        await axios.post('http://localhost:3000/', formData);
+        await axios.post(`${import.meta.env.VITE_SERVER}`, formData);
         
         setFormData({ level: '', message: '', resourceId: '' , timestamp: '', traceId: '', spanId: '', commit: '', parentResourceId: ''});
         console.log('Log ingested successfully!');

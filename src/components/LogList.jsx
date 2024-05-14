@@ -10,7 +10,7 @@ function LogList() {
 
     const fetchLogs = async (property, value) => {
         try {
-            const response = await axios.get('http://localhost:3000/api/logs', {
+            const response = await axios.get(`${import.meta.env.VITE_SERVER}api/logs`, {
                 params: { [property]: value }, });
             setLogs(response.data);
         } catch (error) {
